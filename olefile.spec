@@ -4,9 +4,9 @@
 #
 Name     : olefile
 Version  : 0.44
-Release  : 2
-URL      : https://pypi.python.org/packages/35/17/c15d41d5a8f8b98cc3df25eb00c5cee76193114c78e5674df6ef4ac92647/olefile-0.44.zip
-Source0  : https://pypi.python.org/packages/35/17/c15d41d5a8f8b98cc3df25eb00c5cee76193114c78e5674df6ef4ac92647/olefile-0.44.zip
+Release  : 3
+URL      : http://pypi.debian.net/olefile/olefile-0.44.zip
+Source0  : http://pypi.debian.net/olefile/olefile-0.44.zip
 Summary  : Python package to parse, read and write Microsoft OLE2 files (Structured Storage or Compound Document, Microsoft Office) - Improved version of the OleFileIO module from PIL, the Python Image Library.
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause
@@ -18,11 +18,9 @@ BuildRequires : python3-dev
 BuildRequires : setuptools
 
 %description
-olefile (formerly OleFileIO_PL)
-===============================
-[![Build Status](https://travis-ci.org/decalage2/olefile.svg?branch=master)](https://travis-ci.org/decalage2/olefile)
-[![Coverage Status](https://coveralls.io/repos/github/decalage2/olefile/badge.svg?branch=master)](https://coveralls.io/github/decalage2/olefile?branch=master)
-[![Documentation Status](http://readthedocs.org/projects/olefile/badge/?version=latest)](http://olefile.readthedocs.io/en/latest/?badge=latest)
+================================
+        
+        |Build Status| |Coverage Status| |Documentation Status|
 
 %package python
 Summary: python components for the olefile package.
@@ -36,20 +34,27 @@ python components for the olefile package.
 %setup -q -n olefile-0.44
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1489538800
+export SOURCE_DATE_EPOCH=1503124492
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1489538800
+export SOURCE_DATE_EPOCH=1503124492
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+/usr/lib/python2*/*
+/usr/lib/python3*/*
