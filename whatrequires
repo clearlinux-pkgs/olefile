@@ -1,4 +1,4 @@
 # This file contains recursive sources that require this package
-Pillow-0:4.2.1-37.src
-scikit-image-0:0.13.0-15.src
-tflearn-0:0.3.2-7.src
+Pillow
+scikit-image
+tflearn
