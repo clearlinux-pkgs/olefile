@@ -4,13 +4,14 @@
 #
 Name     : olefile
 Version  : 0.44
-Release  : 5
+Release  : 6
 URL      : http://pypi.debian.net/olefile/olefile-0.44.zip
 Source0  : http://pypi.debian.net/olefile/olefile-0.44.zip
 Summary  : Python package to parse, read and write Microsoft OLE2 files (Structured Storage or Compound Document, Microsoft Office) - Improved version of the OleFileIO module from PIL, the Python Image Library.
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause
 Requires: olefile-legacypython
+Requires: olefile-python3
 Requires: olefile-python
 BuildRequires : pbr
 BuildRequires : pip
@@ -26,6 +27,7 @@ BuildRequires : setuptools
 %package legacypython
 Summary: legacypython components for the olefile package.
 Group: Default
+Requires: python-core
 
 %description legacypython
 legacypython components for the olefile package.
@@ -35,9 +37,19 @@ legacypython components for the olefile package.
 Summary: python components for the olefile package.
 Group: Default
 Requires: olefile-legacypython
+Requires: olefile-python3
 
 %description python
 python components for the olefile package.
+
+
+%package python3
+Summary: python3 components for the olefile package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the olefile package.
 
 
 %prep
@@ -48,12 +60,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505365325
+export SOURCE_DATE_EPOCH=1507161503
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1505365325
+export SOURCE_DATE_EPOCH=1507161503
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -69,5 +81,8 @@ echo ----[ mark ]----
 /usr/lib/python2*/*
 
 %files python
+%defattr(-,root,root,-)
+
+%files python3
 %defattr(-,root,root,-)
 /usr/lib/python3*/*
