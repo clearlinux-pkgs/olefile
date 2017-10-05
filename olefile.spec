@@ -4,7 +4,7 @@
 #
 Name     : olefile
 Version  : 0.44
-Release  : 6
+Release  : 7
 URL      : http://pypi.debian.net/olefile/olefile-0.44.zip
 Source0  : http://pypi.debian.net/olefile/olefile-0.44.zip
 Summary  : Python package to parse, read and write Microsoft OLE2 files (Structured Storage or Compound Document, Microsoft Office) - Improved version of the OleFileIO module from PIL, the Python Image Library.
@@ -60,12 +60,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1507161503
+export SOURCE_DATE_EPOCH=1507163411
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1507161503
+export SOURCE_DATE_EPOCH=1507163411
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
