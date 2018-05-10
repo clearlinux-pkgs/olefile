@@ -4,7 +4,7 @@
 #
 Name     : olefile
 Version  : 0.45.1
-Release  : 12
+Release  : 13
 URL      : http://pypi.debian.net/olefile/olefile-0.45.1.zip
 Source0  : http://pypi.debian.net/olefile/olefile-0.45.1.zip
 Summary  : Python package to parse, read and write Microsoft OLE2 files (Structured Storage or Compound Document, Microsoft Office) - Improved version of the OleFileIO module from PIL, the Python Image Library.
