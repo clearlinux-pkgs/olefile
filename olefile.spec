@@ -4,30 +4,89 @@
 #
 Name     : olefile
 Version  : 0.46
-Release  : 27
+Release  : 28
 URL      : https://files.pythonhosted.org/packages/34/81/e1ac43c6b45b4c5f8d9352396a14144bba52c8fec72a80f425f6a4d653ad/olefile-0.46.zip
 Source0  : https://files.pythonhosted.org/packages/34/81/e1ac43c6b45b4c5f8d9352396a14144bba52c8fec72a80f425f6a4d653ad/olefile-0.46.zip
 Summary  : Python package to parse, read and write Microsoft OLE2 files (Structured Storage or Compound Document, Microsoft Office)
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause
-Requires: olefile-python3
-Requires: olefile-license
-Requires: olefile-python
+Requires: olefile-license = %{version}-%{release}
+Requires: olefile-python = %{version}-%{release}
+Requires: olefile-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 
 %description
-=======
-        
-        |Build Status TravisCI| |Build Status AppVeyor| |Coverage Status|
-        |Documentation Status| |PyPI| |Can I Use Python 3?| |Say Thanks!|
-
-%package doc
-Summary: doc components for the olefile package.
-Group: Documentation
-
-%description doc
-doc components for the olefile package.
-
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>Untitled</title>
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+</style>
+<!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<h1 id="olefile">olefile</h1>
+<p><a href="https://travis-ci.org/decalage2/olefile"><img src="https://travis-ci.org/decalage2/olefile.svg?branch=master" alt="Build Status TravisCI" /></a> <a href="https://ci.appveyor.com/project/decalage2/olefile"><img src="https://ci.appveyor.com/api/projects/status/github/decalage2/olefile?svg=true" alt="Build Status AppVeyor" /></a> <a href="https://coveralls.io/github/decalage2/olefile?branch=master"><img src="https://coveralls.io/repos/github/decalage2/olefile/badge.svg?branch=master" alt="Coverage Status" /></a> <a href="http://olefile.readthedocs.io/en/latest/?badge=latest"><img src="http://readthedocs.org/projects/olefile/badge/?version=latest" alt="Documentation Status" /></a> <a href="https://pypi.org/project/olefile/"><img src="https://img.shields.io/pypi/v/olefile.svg" alt="PyPI" /></a> <a href="https://caniusepython3.com/project/olefile"><img src="https://caniusepython3.com/project/olefile.svg" alt="Can I Use Python 3?" /></a> <a href="https://saythanks.io/to/decalage2"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks!" /></a></p>
+<p><a href="https://www.decalage.info/olefile">olefile</a> is a Python package to parse, read and write <a href="http://en.wikipedia.org/wiki/Compound_File_Binary_Format">Microsoft OLE2 files</a> (also called Structured Storage, Compound File Binary Format or Compound Document File Format), such as Microsoft Office 97-2003 documents, vbaProject.bin in MS Office 2007+ files, Image Composer and FlashPix files, Outlook messages, StickyNotes, several Microscopy file formats, McAfee antivirus quarantine files, etc.</p>
+<p><strong>Quick links:</strong> <a href="https://www.decalage.info/olefile">Home page</a> - <a href="http://olefile.readthedocs.io/en/latest/Install.html">Download/Install</a> - <a href="http://olefile.readthedocs.io/en/latest">Documentation</a> - <a href="https://github.com/decalage2/olefile/issues">Report Issues/Suggestions/Questions</a> - <a href="https://www.decalage.info/contact">Contact the author</a> - <a href="https://github.com/decalage2/olefile">Repository</a> - <a href="https://twitter.com/decalage2">Updates on Twitter</a></p>
+<h2 id="news">News</h2>
+<p>Follow all updates and news on Twitter: <a href="https://twitter.com/decalage2" class="uri">https://twitter.com/decalage2</a></p>
+<ul>
+<li><strong>2018-09-09 v0.46</strong>: OleFileIO can now be used as a context manager (with...as), to close the file automatically (see <a href="https://olefile.readthedocs.io/en/latest/Howto.html#open-an-ole-file-from-disk">doc</a>). Improved handling of malformed files, fixed several bugs.</li>
+<li>2018-01-24 v0.45: olefile can now overwrite streams of any size, improved handling of malformed files, fixed several <a href="https://github.com/decalage2/olefile/milestone/4?closed=1">bugs</a>, end of support for Python 2.6 and 3.3.</li>
+<li>2017-01-06 v0.44: several bugfixes, removed support for Python 2.5 (olefile2), added support for incomplete streams and incorrect directory entries (to read malformed documents), added getclsid, improved <a href="http://olefile.readthedocs.io/en/latest">documentation</a> with API reference.</li>
+<li>2017-01-04: moved the documentation to <a href="http://olefile.readthedocs.io/en/latest">ReadTheDocs</a></li>
+<li>2016-05-20: moved olefile repository to <a href="https://github.com/decalage2/olefile">GitHub</a></li>
+<li>2016-02-02 v0.43: fixed issues <a href="https://github.com/decalage2/olefile/issues/26">#26</a> and <a href="https://github.com/decalage2/olefile/issues/27">#27</a>, better handling of malformed files, use python logging.</li>
+<li>see <a href="https://github.com/decalage2/olefile/blob/master/CHANGELOG.md">changelog</a> for more detailed information and the latest changes.</li>
+</ul>
+<h2 id="downloadinstall">Download/Install</h2>
+<p>If you have pip or setuptools installed (pip is included in Python 2.7.9+), you may simply run <strong>pip install olefile</strong> or <strong>easy_install olefile</strong> for the first installation.</p>
+<p>To update olefile, run <strong>pip install -U olefile</strong>.</p>
+<p>Otherwise, see http://olefile.readthedocs.io/en/latest/Install.html</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Parse, read and write any OLE file such as Microsoft Office 97-2003 legacy document formats (Word .doc, Excel .xls, PowerPoint .ppt, Visio .vsd, Project .mpp), Image Composer and FlashPix files, Outlook messages, StickyNotes, Zeiss AxioVision ZVI files, Olympus FluoView OIB files, etc</li>
+<li>List all the streams and storages contained in an OLE file</li>
+<li>Open streams as files</li>
+<li>Parse and read property streams, containing metadata of the file</li>
+<li>Portable, pure Python module, no dependency</li>
+</ul>
+<p>olefile can be used as an independent package or with PIL/Pillow.</p>
+<p>olefile is mostly meant for developers. If you are looking for tools to analyze OLE files or to extract data (especially for security purposes such as malware analysis and forensics), then please also check my <a href="https://www.decalage.info/python/oletools">python-oletools</a>, which are built upon olefile and provide a higher-level interface.</p>
+<h2 id="documentation">Documentation</h2>
+<p>Please see the <a href="http://olefile.readthedocs.io/en/latest">online documentation</a> for more information.</p>
+<h2 id="real-life-examples">Real-life examples</h2>
+<p>A real-life example: <a href="http://blog.gregback.net/2011/03/using-remnux-for-forensic-puzzle-6/">using OleFileIO_PL for malware analysis and forensics</a>.</p>
+<p>See also <a href="https://computer-forensics.sans.org/community/papers/gcfa/grow-forensic-tools-taxonomy-python-libraries-helpful-forensic-analysis_6879">this paper</a> about python tools for forensics, which features olefile.</p>
+<h2 id="license">License</h2>
+<p>olefile (formerly OleFileIO_PL) is copyright (c) 2005-2018 Philippe Lagadec (<a href="https://www.decalage.info" class="uri">https://www.decalage.info</a>)</p>
+<p>All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<ul>
+<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+</ul>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<hr />
+<p>olefile is based on source code from the OleFileIO module of the Python Imaging Library (PIL) published by Fredrik Lundh under the following license:</p>
+<p>The Python Imaging Library (PIL) is</p>
+<ul>
+</ul>
+<p>By obtaining, using, and/or copying this software and/or its associated documentation, you agree that you have read, understood, and will comply with the following terms and conditions:</p>
+<p>Permission to use, copy, modify, and distribute this software and its associated documentation for any purpose and without fee is hereby granted, provided that the above copyright notice appears in all copies, and that both that copyright notice and this permission notice appear in supporting documentation, and that the name of Secret Labs AB or the author not be used in advertising or publicity pertaining to distribution of the software without specific, written prior permission.</p>
+<p>SECRET LABS AB AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL SECRET LABS AB OR THE AUTHOR BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.</p>
+</body>
+</html>
 
 %package license
 Summary: license components for the olefile package.
@@ -40,7 +99,7 @@ license components for the olefile package.
 %package python
 Summary: python components for the olefile package.
 Group: Default
-Requires: olefile-python3
+Requires: olefile-python3 = %{version}-%{release}
 
 %description python
 python components for the olefile package.
@@ -50,6 +109,7 @@ python components for the olefile package.
 Summary: python3 components for the olefile package.
 Group: Default
 Requires: python3-core
+Provides: pypi(olefile)
 
 %description python3
 python3 components for the olefile package.
@@ -57,21 +117,30 @@ python3 components for the olefile package.
 
 %prep
 %setup -q -n olefile-0.46
+cd %{_builddir}/olefile-0.46
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1536633327
-python3 setup.py build -b py3
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1583189077
+# -Werror is for werrorists
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
+export MAKEFLAGS=%{?_smp_mflags}
+python3 setup.py build
 
 %install
+export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/olefile
-cp LICENSE.txt %{buildroot}/usr/share/doc/olefile/LICENSE.txt
-cp doc/License.rst %{buildroot}/usr/share/doc/olefile/doc_License.rst
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/olefile
+cp %{_builddir}/olefile-0.46/LICENSE.txt %{buildroot}/usr/share/package-licenses/olefile/39139a785b98452f34e53f1dd9916f6a6d0a8ebf
+cp %{_builddir}/olefile-0.46/doc/License.rst %{buildroot}/usr/share/package-licenses/olefile/b26f237ee1e7c24a2f98969fee5228ce94b4d8b7
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -79,13 +148,10 @@ echo ----[ mark ]----
 %files
 %defattr(-,root,root,-)
 
-%files doc
-%defattr(0644,root,root,0755)
-%doc /usr/share/doc/olefile/*
-
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/olefile/LICENSE.txt
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/olefile/39139a785b98452f34e53f1dd9916f6a6d0a8ebf
+/usr/share/package-licenses/olefile/b26f237ee1e7c24a2f98969fee5228ce94b4d8b7
 
 %files python
 %defattr(-,root,root,-)
